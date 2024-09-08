@@ -67,9 +67,14 @@ body{
             color: reset.$Black;
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 3px;
 
             :hover{
                 color: reset.$Dark-Gray;
+            }
+
+            i{
+                font-size: 1rem;
             }
         }
 

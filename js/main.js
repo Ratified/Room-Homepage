@@ -11,7 +11,6 @@ const texts = [
     `With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.`,
     `Our modern furniture store provides a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.`
 ];
-const ctas = ['Shop now', 'Shop now', 'Shop now'];
 
 // Select elements for updating content
 const leftBtn = document.querySelector('.left-btn');
@@ -19,7 +18,6 @@ const rightBtn = document.querySelector('.right-btn');
 const imagesNavbar = document.querySelector('.header__images-navbar');
 const titleElement = document.querySelector('.header__description__title');
 const textElement = document.querySelector('.header__description__text');
-const ctaElement = document.querySelector('.header__description__cta');
 
 // Initialize the current image index
 let currentImage = 0;
@@ -29,7 +27,6 @@ function updateContent() {
     imagesNavbar.style.backgroundImage = `url(${backgroundImages[currentImage]})`;
     titleElement.textContent = titles[currentImage];
     textElement.textContent = texts[currentImage];
-    ctaElement.textContent = ctas[currentImage];
 }
 
 // Right button click event - move to the next image

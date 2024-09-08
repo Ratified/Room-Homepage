@@ -144,9 +144,13 @@ body {
   color: hsl(0, 0%, 0%);
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 3px;
 }
 .header__description__cta :hover {
   color: hsl(0, 0%, 63%);
+}
+.header__description__cta i {
+  font-size: 1rem;
 }
 .header__description__navigation-buttons {
   display: flex;
