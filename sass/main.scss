@@ -1,0 +1,213 @@
+@use 'reset';
+@use 'typography';
+
+body{
+    font-family: typography.$font-leagueSpartan;
+}
+
+.header{
+    width: 100%;
+    min-height: 60svh;
+    display: flex;
+    @media(max-width: 768px){
+        flex-direction: column;
+    }
+
+    & > div{
+        flex: 1;
+    }
+
+    &__images-navbar{
+        padding: 2rem 1rem;
+
+        display: flex;
+        gap: 2rem;
+
+        &__logo{
+           width: 100px;
+           height: 30px;
+        }
+
+        &__nav{
+            .header__images-nav-list{
+                display: flex;
+                gap: 1rem;
+            }
+        }
+
+        background-image: url('../images/desktop-image-hero-1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @media(max-width: 768px){
+            background-image: url('../images/mobile-image-hero-1.jpg');
+            min-height: 80svh;
+        }
+    }
+
+    &__description{
+        padding: 3.5rem;
+
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: flex-start;
+        // align-items: center;
+
+        &__title{
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        &__cta{
+            color: reset.$Black;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            :hover{
+                color: reset.$Dark-Gray;
+            }
+        }
+
+        &__navigation-buttons{
+            display: flex;
+            gap: 0;
+            
+            a{
+                cursor: pointer;
+                padding: 1rem;
+                color: reset.$White;
+                background-color: reset.$Black;
+                font-size: 2rem;
+            }
+
+            a:hover{
+                background-color: reset.$Very-Dark-Gray;
+            }
+
+            position: absolute;
+            top: -80px;
+            right: 10px;
+            
+            @media(min-width: 600px){
+                top: unset;
+                right: unset;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+.header__images-logo{
+    width: auto;
+    height: 50px;
+}
+
+.header__images-nav-list{
+    list-style: none;
+}
+
+.header__images-nav-link{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    position: relative;
+}
+
+.header__images-nav-link::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: reset.$White;
+    transition: width 0.3s;
+}
+
+.header__images-nav-link:hover::before{
+    width: 100%;
+}
+
+
+// About Section
+.about{
+
+   @media(min-width: 600px){
+       display: grid;
+       grid-auto-flow: column;
+       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+       justify-content: center;
+       align-items: center;
+       margin: 0;
+
+       & > div{
+        width: 100%;
+       }
+    }
+    
+    margin: 1rem;
+   // display: flex;
+   // align-items: center;
+   // justify-content: center;
+   
+   // & > *{
+    //     flex: 1;
+    // }
+}
+
+.mobile__header__images-nav-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 100px 0 100px 0 rgba(0, 0, 0, 0.1);
+
+    display: none;
+    gap: 1rem;
+
+    padding: 1rem;
+    width: 100%;
+
+    z-index: 999;
+    list-style: none;
+
+    .mobile__header__images-nav-item{
+        a{
+            text-decoration: none;
+            color: reset.$Black;
+            cursor: pointer;
+        }
+    }
+
+}
+
+#open{
+    color: white;
+    font-size: 2rem;
+    order: -1;
+}
+
+#open, #cursor{
+    cursor: pointer;
+}
+
+@media(max-width: 768px){
+    .hideOnMobile{
+        display: none;
+    }
+}
+
+@media(min-width: 768px){
+    #open{
+        display: none;
+    }
+}
